@@ -1,0 +1,72 @@
+/* Biến màu chủ đạo */
+:root {
+    --bg: #121212;        /* nền */
+    --fg: #f0f0f0;        /* chữ */
+    --accent: #00bcd4;    /* màu nhấn (link, hover) */
+    --navbar-bg: #222;    /* nền navbar */
+    --card-bg: #1e1e1e;   /* nền các khối nội dung */
+    --hover: #ffeb3b;     /* màu hover link */
+}
+
+/* Toàn trang */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: hotpink !important;
+    color: var(--fg);
+}
+
+/* Link */
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--navbar-bg);
+    padding: 10px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    color: var(--fg);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: var(--hover);
+}
+
+/* Layout chính */
+.layout {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+}
+
+/* Các section */
+.image-section,
+.description-section {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Responsive: trên mobile */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
