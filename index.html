@@ -1,0 +1,69 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="vi">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Trang tổng hợp</title>-->
+<!--    &lt;!&ndash; Đúng đường dẫn tới style.css &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="../public/style.css"></head>-->
+<!--<body>-->
+<!--&lt;!&ndash; Load menu &ndash;&gt;-->
+<!--<div id="menu"></div>-->
+
+<!--&lt;!&ndash; Layout chia phần &ndash;&gt;-->
+<!--<main class="layout">-->
+<!--    <div id="image"></div>-->
+<!--    <div id="description"></div>-->
+<!--</main>-->
+
+<!--<script>-->
+<!--    fetch("menu.html")-->
+<!--        .then(res => res.text())-->
+<!--        .then(data => document.getElementById("menu").innerHTML = data);-->
+
+<!--    fetch("image.html")-->
+<!--        .then(res => res.text())-->
+<!--        .then(data => document.getElementById("image").innerHTML = data);-->
+
+<!--    fetch("description.html")-->
+<!--        .then(res => res.text())-->
+<!--        .then(data => document.getElementById("description").innerHTML = data);-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Project</title>
+    <link rel="stylesheet" href="../public/style.css">
+</head>
+<body>
+<div id="navbar"></div>
+<div id="content"></div>
+
+<script>
+    // Load menu
+    fetch('menu.html')
+        .then(res => res.text())
+        .then(data => document.getElementById('navbar').innerHTML = data);
+
+    // Hàm điều khiển hiển thị nội dung
+    function loadSection(section) {
+        let file = '';
+        if (section === 'home') {
+            document.getElementById('content').innerHTML = ''; // Trang chủ không có gì
+            return;
+        } else if (section === 'image') {
+            file = 'image.html';
+        } else if (section === 'description') {
+            file = 'description.html';
+        }
+
+        fetch(file)
+            .then(res => res.text())
+            .then(data => document.getElementById('content').innerHTML = data);
+    }
+</script>
+</body>
+</html>
